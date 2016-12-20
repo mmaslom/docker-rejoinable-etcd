@@ -4,7 +4,7 @@ MAINTAINER Michal Balinski <m.balinski@oberthur.com>
 
 ENV _ETCD_VERSION=v2.3.7
 
-ADD run.sh run.sh
+ADD run.sh
 
 RUN chmod +x run.sh && \
     curl -LO https://github.com/coreos/etcd/releases/download/$_ETCD_VERSION/etcd-$_ETCD_VERSION-linux-amd64.tar.gz && \
@@ -16,4 +16,4 @@ EXPOSE  2379 2380
 
 #CMD ["./run.sh"]
 
-ENTRYPOINT [ "run.sh" ]
+ENTRYPOINT run.sh
